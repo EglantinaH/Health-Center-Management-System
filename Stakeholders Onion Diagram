@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stakeholder Onion Diagram – Health Care Management System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    padding: 30px 20px;
+  }
+  h1 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+  h2 {
+    color: #a8d8ea;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .diagram-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  svg {
+    filter: drop-shadow(0 10px 40px rgba(0,0,0,0.5));
+  }
+  .legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 220px;
+  }
+  .legend-title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .legend-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+  .legend-content h4 {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .legend-content p {
+    color: #b0c4d8;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<h1> Health Care Management System</h1>
+<h2>Stakeholder Onion Diagram</h2>
+
+<div class="diagram-wrapper">
+<svg width="620" height="620" viewBox="0 0 620 620" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient fills for rings -->
+    <radialGradient id="gradCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a6b8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d4a63;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="gradOp" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1e7b4a;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#145c37;stop-opacity:0.9" />
+    </radialGradient>
+    <radialGradient id="gradInt" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2d6a9f;stop-opacity:0.85" />
+      <stop offset="100%" style="stop-color:#1a4a75;stop-opacity:0.85" />
+    </radialGradient>
+    <radialGradient id="gradExt" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#7b3f9e;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#5a2a78;stop-opacity:0.8" />
+    </radialGradient>
+    <radialGradient id="gradExec" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#b5451b;stop-opacity:0.75" />
+      <stop offset="100%" style="stop-color:#8a2f0f;stop-opacity:0.75" />
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="textShadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="rgba(0,0,0,0.8)"/>
+    </filter>
+  </defs>
+
+  <!-- ===== RING 4: EXECUTIVE (outermost) ===== -->
+  <circle cx="310" cy="310" r="295" fill="url(#gradExec)" stroke="#e07a50" stroke-width="2"/>
+
+  <!-- ===== RING 3: EXTERNAL ===== -->
+  <circle cx="310" cy="310" r="235" fill="url(#gradExt)" stroke="#b07dd4" stroke-width="2"/>
+
+  <!-- ===== RING 2: INTERNAL ===== -->
+  <circle cx="310" cy="310" r="175" fill="url(#gradInt)" stroke="#6aaed6" stroke-width="2"/>
+
+  <!-- ===== RING 1: OPERATIONAL ===== -->
+  <circle cx="310" cy="310" r="115" fill="url(#gradOp)" stroke="#5dc896" stroke-width="2"/>
+
+  <!-- ===== CENTER: SYSTEM ===== -->
+  <circle cx="310" cy="310" r="60" fill="url(#gradCenter)" stroke="#4dd0e1" stroke-width="3" filter="url(#glow)"/>
+
+  <!-- ===== RING LABELS ===== -->
+  <!-- Operational label -->
+  <text x="310" y="208" text-anchor="middle" fill="#a0f0c0" font-size="10" font-weight="700" font-family="Inter" letter-spacing="1.5" filter="url(#textShadow)">OPERATIONAL</text>
+
+  <!-- Internal label -->
+  <text x="310" y="148" text-anchor="middle" fill="#90c8f0" font-size="10" font-weight="700" font-family="Inter" letter-spacing="1.5" filter="url(#textShadow)">INTERNAL</text>
+
+  <!-- External label -->
+<text x="250" y="87" text-anchor="middle" fill="#d4a0f0" font-size="10" font-weight="700" font-family="Inter" letter-spacing="1.5" filter="url(#textShadow)">EXTERNAL</text>
+  <!-- Executive label -->
+  <text x="245" y="29" text-anchor="middle" fill="#f0a080" font-size="10" font-weight="700" font-family="Inter" letter-spacing="1.5" filter="url(#textShadow)">EXECUTIVE</text>
+
+  <!-- ===== CENTER TEXT ===== -->
+  <text x="310" y="294" text-anchor="middle" fill="#ffffff" font-size="7.5" font-weight="800" font-family="Inter" filter="url(#textShadow)">Health Center</text>
+  <text x="310" y="305" text-anchor="middle" fill="#ffffff" font-size="7.5" font-weight="800" font-family="Inter" filter="url(#textShadow)">Management</text>
+  <text x="310" y="316" text-anchor="middle" fill="#ffffff" font-size="7.5" font-weight="800" font-family="Inter" filter="url(#textShadow)">System</text>
+  <text x="310" y="328" text-anchor="middle" fill="#4dd0e1" font-size="9" font-weight="800" font-family="Inter" filter="url(#textShadow)">HCMS</text>
+
+  <!-- ===================================== -->
+  <!-- OPERATIONAL STAKEHOLDERS (Ring 1)     -->
+  <!-- Placed around r=115 layer             -->
+  <!-- ===================================== -->
+
+  <!-- Doctor (top-left of op ring) -->
+  <g>
+    <circle cx="246" cy="248" r="22" fill="#27ae60" stroke="#5dc896" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="246" y="245" text-anchor="middle" fill="#fff" font-size="15" font-family="Inter">👨‍⚕️</text>
+    <text x="246" y="257" text-anchor="middle" fill="#fff" font-size="8" font-weight="700" font-family="Inter">Doctor</text>
+  </g>
+
+  <!-- Receptionist (bottom-left op ring) -->
+  <g>
+    <circle cx="248" cy="370" r="22" fill="#27ae60" stroke="#5dc896" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="248" y="367" text-anchor="middle" fill="#fff" font-size="15" font-family="Inter">👩‍💼</text>
+    <text x="248" y="379" text-anchor="middle" fill="#fff" font-size="8" font-weight="700" font-family="Inter">Receptionist</text>
+  </g>
+
+  <!-- Nurse (bottom op ring) -->
+  <g>
+    <circle cx="310" cy="405" r="22" fill="#27ae60" stroke="#5dc896" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="310" y="402" text-anchor="middle" fill="#fff" font-size="15" font-family="Inter">👩‍⚕️</text>
+    <text x="310" y="414" text-anchor="middle" fill="#fff" font-size="8" font-weight="700" font-family="Inter">Nurse</text>
+  </g>
+
+  <!-- Admin (right op ring) -->
+  <g>
+    <circle cx="372" cy="310" r="22" fill="#27ae60" stroke="#5dc896" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="372" y="307" text-anchor="middle" fill="#fff" font-size="15" font-family="Inter">🔧</text>
+    <text x="372" y="319" text-anchor="middle" fill="#fff" font-size="8" font-weight="700" font-family="Inter">Admin</text>
+  </g>
+
+  <!-- ===================================== -->
+  <!-- INTERNAL STAKEHOLDERS (Ring 2)        -->
+  <!-- Placed around r=175 layer             -->
+  <!-- ===================================== -->
+
+  <!-- IT Staff -->
+  <g>
+    <circle cx="190" cy="210" r="24" fill="#2980b9" stroke="#6aaed6" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="190" y="206" text-anchor="middle" fill="#fff" font-size="16" font-family="Inter">💻</text>
+    <text x="190" y="218" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="700" font-family="Inter">IT Staff</text>
+  </g>
+
+  <!-- HR Manager -->
+  <g>
+    <circle cx="165" cy="310" r="24" fill="#2980b9" stroke="#6aaed6" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="165" y="306" text-anchor="middle" fill="#fff" font-size="16" font-family="Inter">🗂️</text>
+    <text x="165" y="318" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="700" font-family="Inter">HR Manager</text>
+  </g>
+
+  <!-- Accountant -->
+  <g>
+    <circle cx="190" cy="405" r="24" fill="#2980b9" stroke="#6aaed6" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="190" y="401" text-anchor="middle" fill="#fff" font-size="16" font-family="Inter">💰</text>
+    <text x="190" y="413" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="700" font-family="Inter">Accountant</text>
+  </g>
+
+  <!-- Lab Technician -->
+  <g>
+    <circle cx="410" cy="210" r="24" fill="#2980b9" stroke="#6aaed6" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="410" y="206" text-anchor="middle" fill="#fff" font-size="16" font-family="Inter">🔬</text>
+    <text x="410" y="218" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="700" font-family="Inter">Lab Tech</text>
+  </g>
+
+  <!-- ===================================== -->
+  <!-- EXTERNAL STAKEHOLDERS (Ring 3)        -->
+  <!-- Placed around r=235 layer             -->
+  <!-- ===================================== -->
+
+  <!-- Patient (top) -->
+  <g>
+    <circle cx="310" cy="84" r="26" fill="#8e44ad" stroke="#d4a0f0" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="310" y="80" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">🧑</text>
+    <text x="310" y="92" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="700" font-family="Inter">Patient</text>
+  </g>
+
+  <!-- Insurance Company -->
+  <g>
+    <circle cx="130" cy="165" r="26" fill="#8e44ad" stroke="#d4a0f0" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="130" y="161" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">🏦</text>
+    <text x="130" y="173" text-anchor="middle" fill="#fff" font-size="7" font-weight="700" font-family="Inter">Insurance Co.</text>
+  </g>
+
+  <!-- Pharmacy -->
+  <g>
+    <circle cx="90" cy="310" r="26" fill="#8e44ad" stroke="#d4a0f0" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="90" y="306" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">💊</text>
+    <text x="90" y="318" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="700" font-family="Inter">Pharmacy</text>
+  </g>
+
+  <!-- Suppliers -->
+  <g>
+    <circle cx="130" cy="450" r="26" fill="#8e44ad" stroke="#d4a0f0" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="130" y="446" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">📦</text>
+    <text x="130" y="458" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="700" font-family="Inter">Suppliers</text>
+  </g>
+
+  <!-- Hospital/Referral -->
+  <g>
+    <circle cx="490" cy="165" r="26" fill="#8e44ad" stroke="#d4a0f0" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="490" y="161" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">🏥</text>
+    <text x="490" y="173" text-anchor="middle" fill="#fff" font-size="7" font-weight="700" font-family="Inter">Ref. Hospital</text>
+  </g>
+
+  <!-- Laboratory -->
+  <g>
+    <circle cx="530" cy="310" r="26" fill="#8e44ad" stroke="#d4a0f0" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="530" y="306" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">🧪</text>
+    <text x="530" y="318" text-anchor="middle" fill="#fff" font-size="7.5" font-weight="700" font-family="Inter">Laboratory</text>
+  </g>
+
+  <!-- Shipping Company -->
+  <g>
+    <circle cx="490" cy="450" r="26" fill="#8e44ad" stroke="#d4a0f0" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="490" y="446" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">🚚</text>
+    <text x="490" y="458" text-anchor="middle" fill="#fff" font-size="7" font-weight="700" font-family="Inter">Shipping Co.</text>
+  </g>
+
+  <!-- ===================================== -->
+  <!-- EXECUTIVE STAKEHOLDERS (Ring 4)       -->
+  <!-- ===================================== -->
+
+  <!-- Healthcare Director -->
+  <g>
+    <circle cx="310" cy="22" r="26" fill="#c0392b" stroke="#f0a080" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="310" y="17" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">👔</text>
+    <text x="310" y="29" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700" font-family="Inter">HC Director</text>
+  </g>
+
+  <!-- Ministry of Health -->
+  <g>
+    <circle cx="60" cy="105" r="26" fill="#c0392b" stroke="#f0a080" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="60" y="100" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">🏛️</text>
+    <text x="60" y="112" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700" font-family="Inter">Ministry Health</text>
+  </g>
+
+  <!-- Board of Directors -->
+  <g>
+    <circle cx="30" cy="310" r="26" fill="#c0392b" stroke="#f0a080" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="30" y="305" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">🏢</text>
+    <text x="30" y="317" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700" font-family="Inter">Board of Dir.</text>
+  </g>
+
+  <!-- Medical Director -->
+  <g>
+    <circle cx="560" cy="105" r="26" fill="#c0392b" stroke="#f0a080" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="560" y="100" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">🩺</text>
+    <text x="560" y="112" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700" font-family="Inter">Medical Dir.</text>
+  </g>
+
+  <!-- IT Manager / CTO -->
+  <g>
+    <circle cx="590" cy="310" r="26" fill="#c0392b" stroke="#f0a080" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="590" y="305" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">🖥️</text>
+    <text x="590" y="317" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700" font-family="Inter">IT Manager</text>
+  </g>
+
+  <!-- Government/Regulators -->
+  <g>
+    <circle cx="60" cy="505" r="26" fill="#c0392b" stroke="#f0a080" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="60" y="500" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">⚖️</text>
+    <text x="60" y="512" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700" font-family="Inter">Regulators</text>
+  </g>
+
+  <!-- Finance Manager -->
+  <g>
+    <circle cx="310" cy="598" r="26" fill="#c0392b" stroke="#f0a080" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="310" y="593" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">📊</text>
+    <text x="310" y="605" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700" font-family="Inter">Finance Mgr</text>
+  </g>
+
+  <!-- Auditors -->
+  <g>
+    <circle cx="560" cy="505" r="26" fill="#c0392b" stroke="#f0a080" stroke-width="1.5" filter="url(#glow)"/>
+    <text x="560" y="500" text-anchor="middle" fill="#fff" font-size="17" font-family="Inter">📋</text>
+    <text x="560" y="512" text-anchor="middle" fill="#fff" font-size="6.5" font-weight="700" font-family="Inter">Auditors</text>
+  </g>
+
+</svg>
+
+<!-- Legend -->
+<div class="legend">
+  <div class="legend-title">📌 Legend</div>
+
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#1e7b4a;border:2px solid #5dc896;"></div>
+    <div class="legend-content">
+      <h4>Operational Stakeholders</h4>
+      <p>Directly interact with the system daily: Doctor, Receptionist, Nurse, Administrator</p>
+    </div>
+  </div>
+
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#2980b9;border:2px solid #6aaed6;"></div>
+    <div class="legend-content">
+      <h4>Internal Stakeholders</h4>
+      <p>Within the organization: IT Staff, HR Manager, Accountant, Lab Technician</p>
+    </div>
+  </div>
+
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#8e44ad;border:2px solid #d4a0f0;"></div>
+    <div class="legend-content">
+      <h4 >External Stakeholders</h4>
+      <p>Outside the organization: Patients, Insurance Co., Pharmacy, Suppliers, Shipping Co., Referral Hospital, Laboratory</p>
+    </div>
+  </div>
+
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#c0392b;border:2px solid #f0a080;"></div>
+    <div class="legend-content">
+      <h4> Executive Stakeholders</h4>
+      <p>Decision makers: HC Director, Medical Director, Board of Directors, IT Manager, Ministry of Health, Regulators, Finance Manager, Auditors</p>
+    </div>
+  </div>
+
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#1a6b8a;border:2px solid #4dd0e1;"></div>
+    <div class="legend-content">
+      <h4> System Core</h4>
+      <p>e-health.albania – Health Center Management System</p>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
