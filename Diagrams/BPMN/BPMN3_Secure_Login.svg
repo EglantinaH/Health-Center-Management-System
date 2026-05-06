@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="430" viewBox="0 0 1200 430" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M1 1L9 5L1 9" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect width="1200" height="430" fill="white"/>
+<style>
+  text { font-family: Arial, Helvetica, sans-serif; fill: #111; }
+  .ll { font-size:12px; font-weight:bold; }
+  .tl { font-size:11px; }
+  .ts { font-size:10px; fill:#444; }
+  .gl { font-size:10px; fill:#333; }
+  .ttl { font-size:12px; font-weight:bold; }
+</style>
+
+<!-- Pool border -->
+<rect x="30" y="15" width="1155" height="405" rx="4" fill="none" stroke="#111" stroke-width="2"/>
+<rect x="30" y="15" width="32" height="405" fill="#ddd" stroke="#111" stroke-width="1"/>
+<text class="ll" x="46" y="218" text-anchor="middle" transform="rotate(-90,46,218)">BPMN 3: Secure Login, Account Lockout &amp; User Management</text>
+
+<!-- System User lane y=15..155 -->
+<rect x="62" y="15" width="1123" height="140" fill="none" stroke="#111" stroke-width="1"/>
+<rect x="62" y="15" width="52" height="140" fill="#f0f0f0" stroke="#111" stroke-width="0.8"/>
+<text class="ll" x="88" y="85" text-anchor="middle" transform="rotate(-90,88,85)">System User</text>
+
+<!-- System lane y=155..285 -->
+<rect x="62" y="155" width="1123" height="130" fill="none" stroke="#111" stroke-width="1"/>
+<rect x="62" y="155" width="52" height="130" fill="#f0f0f0" stroke="#111" stroke-width="0.8"/>
+<text class="ll" x="88" y="220" text-anchor="middle" transform="rotate(-90,88,220)">System</text>
+
+<!-- Administrator lane y=285..420 -->
+<rect x="62" y="285" width="1123" height="135" fill="none" stroke="#111" stroke-width="1"/>
+<rect x="62" y="285" width="52" height="135" fill="#f0f0f0" stroke="#111" stroke-width="0.8"/>
+<text class="ll" x="88" y="353" text-anchor="middle" transform="rotate(-90,88,353)">Administrator</text>
+
+<!-- ===== SYSTEM USER LANE ===== -->
+<circle cx="135" cy="85" r="14" fill="white" stroke="#111" stroke-width="2"/>
+<text class="tl" x="135" y="110" text-anchor="middle">Access System</text>
+
+<rect x="162" y="57" width="120" height="56" rx="4" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="tl" x="222" y="77" text-anchor="middle">Enter Username</text>
+<text class="tl" x="222" y="90" text-anchor="middle">&amp; Password</text>
+<text class="ts" x="222" y="103" text-anchor="middle">US-05</text>
+
+<!-- Gateway: Valid Creds? -->
+<polygon points="312,85 338,60 364,85 338,110" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="gl" x="338" y="81" text-anchor="middle">Valid</text>
+<text class="gl" x="338" y="93" text-anchor="middle">Creds?</text>
+
+<!-- YES: Access Role Dashboard -->
+<rect x="390" y="57" width="120" height="56" rx="4" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="tl" x="450" y="77" text-anchor="middle">Access Role</text>
+<text class="tl" x="450" y="90" text-anchor="middle">Dashboard</text>
+<text class="ts" x="450" y="103" text-anchor="middle">NFR-06</text>
+
+<!-- Intermediate: Session Active -->
+<circle cx="570" cy="85" r="14" fill="white" stroke="#111" stroke-width="2"/>
+<circle cx="570" cy="85" r="10" fill="none" stroke="#111" stroke-width="1.2"/>
+<text class="tl" x="570" y="110" text-anchor="middle">Session Active</text>
+
+<!-- Gateway: Failed ≥5? -->
+<polygon points="620,85 646,60 672,85 646,110" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="gl" x="646" y="81" text-anchor="middle">Failed</text>
+<text class="gl" x="646" y="93" text-anchor="middle">≥5×?</text>
+
+<!-- View Lockout Message -->
+<rect x="700" y="57" width="120" height="56" rx="4" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="tl" x="760" y="77" text-anchor="middle">View Lockout</text>
+<text class="tl" x="760" y="90" text-anchor="middle">Message</text>
+
+<!-- End: Locked Out -->
+<circle cx="880" cy="85" r="14" fill="white" stroke="#111" stroke-width="4"/>
+<text class="tl" x="880" y="110" text-anchor="middle">Locked Out</text>
+
+<!-- ===== SYSTEM LANE ===== -->
+<rect x="162" y="180" width="120" height="56" rx="4" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="tl" x="222" y="197" text-anchor="middle">Validate Creds</text>
+<text class="ts" x="222" y="210" text-anchor="middle">bcrypt NFR-04</text>
+<text class="ts" x="222" y="223" text-anchor="middle">TLS NFR-05</text>
+
+<rect x="312" y="180" width="120" height="56" rx="4" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="tl" x="372" y="197" text-anchor="middle">Increment Fail</text>
+<text class="tl" x="372" y="210" text-anchor="middle">Counter</text>
+<text class="ts" x="372" y="223" text-anchor="middle">NFR-07</text>
+
+<rect x="620" y="180" width="120" height="56" rx="4" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="tl" x="680" y="197" text-anchor="middle">Lock Account &amp;</text>
+<text class="tl" x="680" y="210" text-anchor="middle">Audit Log</text>
+<text class="ts" x="680" y="223" text-anchor="middle">NFR-07/08</text>
+
+<rect x="900" y="180" width="130" height="56" rx="4" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="tl" x="965" y="197" text-anchor="middle">Send Unlock Email</text>
+<text class="tl" x="965" y="210" text-anchor="middle">&amp; Reset Counter</text>
+
+<!-- ===== ADMIN LANE ===== -->
+<circle cx="135" cy="353" r="14" fill="white" stroke="#111" stroke-width="2"/>
+<text class="tl" x="135" y="377" text-anchor="middle">Admin Login</text>
+
+<rect x="162" y="325" width="120" height="56" rx="4" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="tl" x="222" y="342" text-anchor="middle">Create/Edit</text>
+<text class="tl" x="222" y="355" text-anchor="middle">User Account</text>
+<text class="ts" x="222" y="368" text-anchor="middle">US-20</text>
+
+<rect x="312" y="325" width="120" height="56" rx="4" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="tl" x="372" y="342" text-anchor="middle">Assign RBAC</text>
+<text class="tl" x="372" y="355" text-anchor="middle">Role &amp; Perms</text>
+
+<rect x="800" y="325" width="130" height="56" rx="4" fill="white" stroke="#111" stroke-width="1.5"/>
+<text class="tl" x="865" y="342" text-anchor="middle">Unlock Account</text>
+<text class="tl" x="865" y="355" text-anchor="middle">via Mgmt Panel</text>
+
+<!-- End: User Active -->
+<circle cx="990" cy="353" r="14" fill="white" stroke="#111" stroke-width="4"/>
+<text class="tl" x="990" y="377" text-anchor="middle">User Active</text>
+
+<!-- ===== FLOWS ===== -->
+<line x1="149" y1="85" x2="162" y2="85" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="222" y1="113" x2="222" y2="180" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="282" y1="85" x2="312" y2="85" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<!-- Yes -->
+<line x1="364" y1="85" x2="390" y2="85" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<text class="gl" x="368" y="80">Yes</text>
+<!-- No → Increment fail counter -->
+<path d="M338 110 L338 148 L372 148 L372 180" fill="none" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<text class="gl" x="342" y="144">No</text>
+<!-- Retry loop: Increment → back to gateway -->
+<path d="M372 180 L372 157 L338 157" fill="none" stroke="#111" stroke-width="1.5"/>
+<line x1="338" y1="157" x2="338" y2="110" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<line x1="510" y1="85" x2="556" y2="85" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="584" y1="85" x2="620" y2="85" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<!-- Yes ≥5 → View Lockout -->
+<line x1="672" y1="85" x2="700" y2="85" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<text class="gl" x="676" y="80">Yes</text>
+<!-- No ≥5 → (session ok, dashed) -->
+<path d="M646 110 L646 148" fill="none" stroke="#111" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text class="gl" x="650" y="146">No (ok)</text>
+
+<line x1="820" y1="85" x2="866" y2="85" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<!-- View Lockout → Lock Account System -->
+<line x1="760" y1="113" x2="680" y2="180" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<!-- Lock Account → Unlock Account Admin -->
+<path d="M680 236 L680 290 L865 290 L865 325" fill="none" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<!-- Lock Account → Send Unlock Email -->
+<line x1="740" y1="208" x2="900" y2="208" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<!-- Send Unlock Email → Unlock Account (dashed message) -->
+<path d="M965 236 L965 310 L865 310 L865 325" fill="none" stroke="#111" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arr)"/>
+
+<line x1="149" y1="353" x2="162" y2="353" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="282" y1="353" x2="312" y2="353" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="930" y1="353" x2="976" y2="353" stroke="#111" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<text class="ttl" x="600" y="422" text-anchor="middle">BPMN 3: Secure Login, Account Lockout &amp; User Management (US-05)</text>
+</svg>
