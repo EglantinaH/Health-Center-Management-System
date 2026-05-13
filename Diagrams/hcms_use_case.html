@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HCMS – Use Case Diagram</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f0f2f5;padding:28px 20px}
+.page-title{text-align:center;font-size:20px;font-weight:600;color:#1a1a2e;margin-bottom:4px}
+.page-sub{text-align:center;font-size:12px;color:#666;margin-bottom:24px}
+.diagram-wrap{background:#fff;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.1);overflow-x:auto;padding:24px}
+svg{display:block;width:100%;min-width:760px}
+</style>
+</head>
+<body>
+<p class="page-title">HCMS – use case diagram</p>
+<p class="page-sub">Actor interactions and system boundaries · e-health.albania</p>
+<div class="diagram-wrap">
+<svg viewBox="0 0 980 860" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 2L9 5L1 8" fill="none" stroke="#555" stroke-width="1.5"/>
+  </marker>
+  <marker id="arrInc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 2L9 5L1 8" fill="none" stroke="#2e6da4" stroke-width="1.5"/>
+  </marker>
+  <marker id="arrExt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M1 2L9 5L1 8" fill="none" stroke="#7c3aed" stroke-width="1.5"/>
+  </marker>
+</defs>
+
+<!-- ═══════════════════════
+     SYSTEM BOUNDARY
+═══════════════════════ -->
+<rect x="190" y="50" width="600" height="740" rx="10" fill="#FAFBFD" stroke="#1a1a2e" stroke-width="2"/>
+<text font-size="13" font-weight="700" fill="#1a1a2e" text-anchor="middle" x="490" y="80">e-health.albania · HCMS</text>
+<text font-size="10" fill="#666" text-anchor="middle" x="490" y="95">Health Center Management System</text>
+
+<!-- ─── SHARED: Secure Login ─── -->
+<ellipse cx="490" cy="148" rx="100" ry="28" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+<text font-size="12" font-weight="600" fill="#1a1a2e" text-anchor="middle" dominant-baseline="central" x="490" y="143">Secure login</text>
+<text font-size="10" fill="#555" text-anchor="middle" dominant-baseline="central" x="490" y="158">all users</text>
+
+<!-- ─── RECEPTIONIST USE CASES ─── -->
+<ellipse cx="340" cy="255" rx="100" ry="28" fill="#EBF7EE" stroke="#27ae60" stroke-width="1.5"/>
+<text font-size="12" font-weight="600" fill="#166534" text-anchor="middle" dominant-baseline="central" x="340" y="250">Register new patient</text>
+<text font-size="10" fill="#15803d" text-anchor="middle" dominant-baseline="central" x="340" y="265">capture &amp; validate data</text>
+
+<ellipse cx="340" cy="340" rx="100" ry="28" fill="#EBF7EE" stroke="#27ae60" stroke-width="1.5"/>
+<text font-size="12" font-weight="600" fill="#166534" text-anchor="middle" dominant-baseline="central" x="340" y="335">Search patient</text>
+<text font-size="10" fill="#15803d" text-anchor="middle" dominant-baseline="central" x="340" y="350">by name or ID</text>
+
+<ellipse cx="340" cy="425" rx="100" ry="28" fill="#EBF7EE" stroke="#27ae60" stroke-width="1.5"/>
+<text font-size="12" font-weight="600" fill="#166534" text-anchor="middle" dominant-baseline="central" x="340" y="420">Schedule appointment</text>
+<text font-size="10" fill="#15803d" text-anchor="middle" dominant-baseline="central" x="340" y="435">allocate time slot</text>
+
+<!-- ─── DOCTOR USE CASES ─── -->
+<ellipse cx="640" cy="255" rx="100" ry="28" fill="#FEF6EB" stroke="#d97706" stroke-width="1.5"/>
+<text font-size="12" font-weight="600" fill="#78350f" text-anchor="middle" dominant-baseline="central" x="640" y="250">View patient history</text>
+<text font-size="10" fill="#92400e" text-anchor="middle" dominant-baseline="central" x="640" y="265">access medical records</text>
+
+<ellipse cx="640" cy="340" rx="100" ry="28" fill="#FEF6EB" stroke="#d97706" stroke-width="1.5"/>
+<text font-size="12" font-weight="600" fill="#78350f" text-anchor="middle" dominant-baseline="central" x="640" y="335">Add diagnosis</text>
+<text font-size="10" fill="#92400e" text-anchor="middle" dominant-baseline="central" x="640" y="350">record consultation</text>
+
+<ellipse cx="640" cy="425" rx="100" ry="28" fill="#FEF6EB" stroke="#d97706" stroke-width="1.5"/>
+<text font-size="12" font-weight="600" fill="#78350f" text-anchor="middle" dominant-baseline="central" x="640" y="420">Add prescription</text>
+<text font-size="10" fill="#92400e" text-anchor="middle" dominant-baseline="central" x="640" y="435">issue treatment plan</text>
+
+<!-- ─── PATIENT USE CASES ─── -->
+<ellipse cx="400" cy="545" rx="100" ry="28" fill="#F0EBF7" stroke="#7c3aed" stroke-width="1.5"/>
+<text font-size="12" font-weight="600" fill="#4c1d95" text-anchor="middle" dominant-baseline="central" x="400" y="540">Book appointment</text>
+<text font-size="10" fill="#6d28d9" text-anchor="middle" dominant-baseline="central" x="400" y="555">self-service portal</text>
+
+<ellipse cx="580" cy="545" rx="100" ry="28" fill="#F0EBF7" stroke="#7c3aed" stroke-width="1.5"/>
+<text font-size="12" font-weight="600" fill="#4c1d95" text-anchor="middle" dominant-baseline="central" x="580" y="540">View medical history</text>
+<text font-size="10" fill="#6d28d9" text-anchor="middle" dominant-baseline="central" x="580" y="555">own records only</text>
+
+<!-- ─── ADMIN USE CASE ─── -->
+<ellipse cx="490" cy="680" rx="110" ry="28" fill="#FEF2F2" stroke="#c0392b" stroke-width="1.5"/>
+<text font-size="12" font-weight="600" fill="#7f1d1d" text-anchor="middle" dominant-baseline="central" x="490" y="675">Manage staff records</text>
+<text font-size="10" fill="#991b1b" text-anchor="middle" dominant-baseline="central" x="490" y="690">HR &amp; technical support</text>
+
+<!-- ─── INCLUDED / SUB USE CASES (dashed border) ─── -->
+<ellipse cx="340" cy="510" rx="95" ry="24" fill="#EEF6FF" stroke="#2e6da4" stroke-width="1" stroke-dasharray="4 2"/>
+<text font-size="11" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="central" x="340" y="505">Generate patient ID</text>
+<text font-size="9" fill="#3b82f6" text-anchor="middle" dominant-baseline="central" x="340" y="518">unique identifier</text>
+
+<ellipse cx="490" cy="470" rx="95" ry="24" fill="#EEF6FF" stroke="#2e6da4" stroke-width="1" stroke-dasharray="4 2"/>
+<text font-size="11" font-weight="600" fill="#1e40af" text-anchor="middle" dominant-baseline="central" x="490" y="465">Check doctor availability</text>
+<text font-size="9" fill="#3b82f6" text-anchor="middle" dominant-baseline="central" x="490" y="478">real-time schedule</text>
+
+<ellipse cx="640" cy="510" rx="95" ry="24" fill="#FAF0FD" stroke="#7c3aed" stroke-width="1" stroke-dasharray="4 2"/>
+<text font-size="11" font-weight="600" fill="#5b21b6" text-anchor="middle" dominant-baseline="central" x="640" y="505">Notify pharmacy</text>
+<text font-size="9" fill="#7c3aed" text-anchor="middle" dominant-baseline="central" x="640" y="518">external data push</text>
+
+<!-- ═══════════════════════
+     ACTORS (stick figures)
+═══════════════════════ -->
+
+<!-- Receptionist (left) -->
+<circle cx="80" cy="320" r="18" fill="#EBF7EE" stroke="#27ae60" stroke-width="2"/>
+<line x1="80" y1="338" x2="80" y2="386" stroke="#27ae60" stroke-width="2"/>
+<line x1="80" y1="352" x2="58" y2="374" stroke="#27ae60" stroke-width="2"/>
+<line x1="80" y1="352" x2="102" y2="374" stroke="#27ae60" stroke-width="2"/>
+<line x1="80" y1="386" x2="62" y2="412" stroke="#27ae60" stroke-width="2"/>
+<line x1="80" y1="386" x2="98" y2="412" stroke="#27ae60" stroke-width="2"/>
+<text font-size="11" font-weight="700" fill="#166534" text-anchor="middle" x="80" y="428">Receptionist</text>
+
+<!-- Doctor (right) -->
+<circle cx="900" cy="350" r="18" fill="#FEF6EB" stroke="#d97706" stroke-width="2"/>
+<line x1="900" y1="368" x2="900" y2="416" stroke="#d97706" stroke-width="2"/>
+<line x1="900" y1="382" x2="878" y2="404" stroke="#d97706" stroke-width="2"/>
+<line x1="900" y1="382" x2="922" y2="404" stroke="#d97706" stroke-width="2"/>
+<line x1="900" y1="416" x2="882" y2="442" stroke="#d97706" stroke-width="2"/>
+<line x1="900" y1="416" x2="918" y2="442" stroke="#d97706" stroke-width="2"/>
+<text font-size="11" font-weight="700" fill="#78350f" text-anchor="middle" x="900" y="458">Doctor</text>
+
+<!-- Patient (bottom-left) -->
+<circle cx="80" cy="540" r="18" fill="#F0EBF7" stroke="#7c3aed" stroke-width="2"/>
+<line x1="80" y1="558" x2="80" y2="606" stroke="#7c3aed" stroke-width="2"/>
+<line x1="80" y1="572" x2="58" y2="594" stroke="#7c3aed" stroke-width="2"/>
+<line x1="80" y1="572" x2="102" y2="594" stroke="#7c3aed" stroke-width="2"/>
+<line x1="80" y1="606" x2="62" y2="632" stroke="#7c3aed" stroke-width="2"/>
+<line x1="80" y1="606" x2="98" y2="632" stroke="#7c3aed" stroke-width="2"/>
+<text font-size="11" font-weight="700" fill="#4c1d95" text-anchor="middle" x="80" y="648">Patient</text>
+
+<!-- Administrator (bottom-right) -->
+<circle cx="900" cy="640" r="18" fill="#FEF2F2" stroke="#c0392b" stroke-width="2"/>
+<line x1="900" y1="658" x2="900" y2="706" stroke="#c0392b" stroke-width="2"/>
+<line x1="900" y1="672" x2="878" y2="694" stroke="#c0392b" stroke-width="2"/>
+<line x1="900" y1="672" x2="922" y2="694" stroke="#c0392b" stroke-width="2"/>
+<line x1="900" y1="706" x2="882" y2="732" stroke="#c0392b" stroke-width="2"/>
+<line x1="900" y1="706" x2="918" y2="732" stroke="#c0392b" stroke-width="2"/>
+<text font-size="11" font-weight="700" fill="#7f1d1d" text-anchor="middle" x="900" y="748">Administrator</text>
+
+<!-- ═══════════════════════
+     ASSOCIATIONS
+═══════════════════════ -->
+<!-- Receptionist → Secure Login -->
+<path d="M98 318 Q150 260 390 157" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+<!-- Receptionist → Register -->
+<line x1="98" y1="328" x2="240" y2="255" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+<!-- Receptionist → Search -->
+<line x1="98" y1="340" x2="240" y2="340" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+<!-- Receptionist → Schedule -->
+<line x1="98" y1="352" x2="240" y2="425" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+
+<!-- Doctor → Secure Login -->
+<path d="M882 348 Q840 260 590 157" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+<!-- Doctor → View history -->
+<line x1="882" y1="358" x2="740" y2="255" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+<!-- Doctor → Add diagnosis -->
+<line x1="882" y1="368" x2="740" y2="340" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+<!-- Doctor → Add prescription -->
+<line x1="882" y1="378" x2="740" y2="425" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+
+<!-- Patient → Secure Login -->
+<path d="M98 536 Q140 340 390 157" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+<!-- Patient → Book appointment -->
+<line x1="98" y1="548" x2="300" y2="545" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+<!-- Patient → View history -->
+<line x1="98" y1="558" x2="480" y2="545" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+
+<!-- Admin → Secure Login -->
+<path d="M882 638 Q860 420 590 157" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+<!-- Admin → Manage staff -->
+<line x1="882" y1="652" x2="600" y2="680" fill="none" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+
+<!-- ═══════════════════════
+     INCLUDE / EXTEND
+═══════════════════════ -->
+<!-- Register <<include>> Generate Patient ID -->
+<path d="M340 283 L340 486" fill="none" stroke="#2e6da4" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#arrInc)"/>
+<text font-size="9" fill="#2e6da4" font-style="italic" text-anchor="middle" x="318" y="388">«include»</text>
+
+<!-- Schedule <<include>> Check Doctor Availability -->
+<path d="M390 432 Q430 455 395 446" fill="none" stroke="#2e6da4" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#arrInc)"/>
+<line x1="390" y1="432" x2="420" y2="462" fill="none" stroke="#2e6da4" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#arrInc)"/>
+<text font-size="9" fill="#2e6da4" font-style="italic" text-anchor="middle" x="358" y="452">«include»</text>
+
+<!-- Add Diagnosis <<extend>> Notify Pharmacy -->
+<path d="M640 368 L640 486" fill="none" stroke="#7c3aed" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#arrExt)"/>
+<text font-size="9" fill="#7c3aed" font-style="italic" text-anchor="middle" x="666" y="435">«extend»</text>
+
+<!-- ═══════════════════════
+     LEGEND
+═══════════════════════ -->
+<rect x="190" y="808" width="600" height="42" rx="6" fill="#f5f5f5" stroke="#ddd" stroke-width="0.8"/>
+<text font-size="10" font-weight="700" fill="#333" x="210" y="826">Legend:</text>
+<ellipse cx="275" cy="826" rx="26" ry="10" fill="#EBF7EE" stroke="#27ae60" stroke-width="1.5"/>
+<text font-size="9" fill="#333" dominant-baseline="central" x="307" y="826">Use case</text>
+<ellipse cx="380" cy="826" rx="26" ry="10" fill="#EEF6FF" stroke="#2e6da4" stroke-width="1" stroke-dasharray="4 2"/>
+<text font-size="9" fill="#333" dominant-baseline="central" x="412" y="826">Included UC</text>
+<line x1="492" y1="826" x2="522" y2="826" stroke="#555" stroke-width="1.2" marker-end="url(#arr)"/>
+<text font-size="9" fill="#333" dominant-baseline="central" x="528" y="826">Association</text>
+<line x1="608" y1="826" x2="638" y2="826" stroke="#2e6da4" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#arrInc)"/>
+<text font-size="9" fill="#2e6da4" font-style="italic" dominant-baseline="central" x="645" y="826">«include»</text>
+<line x1="710" y1="826" x2="740" y2="826" stroke="#7c3aed" stroke-width="1" stroke-dasharray="5 3" marker-end="url(#arrExt)"/>
+<text font-size="9" fill="#7c3aed" font-style="italic" dominant-baseline="central" x="747" y="826">«extend»</text>
+
+<text font-size="9" fill="#666" font-style="italic" text-anchor="middle" x="490" y="844">Actors are placed outside the system boundary. Colour encodes actor domain (green = receptionist, amber = doctor, purple = patient, red = admin).</text>
+</svg>
+</div>
+</body>
+</html>
